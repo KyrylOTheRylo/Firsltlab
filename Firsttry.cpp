@@ -3,7 +3,7 @@
 using namespace std;
 unsigned const short A = 4;
 unsigned const short C = 7;
-const int M = 214748;
+const unsigned long M = 21474836;
 int dig[10] = {0};
 
 
@@ -36,7 +36,7 @@ void sort_(double temp) {
 }
 
 
-int rand()
+int rand_()
 {
     static int prev = 1;
     prev = (A*prev+C) % M;
@@ -45,17 +45,17 @@ int rand()
 
 int main()
 {
-    for (int i = 0; i < 10000; i++) { sort_(static_cast<double>(rand()) / M * 100); }
-    cout  <<"From 0 to 10 --- " << dig[1]  <<  endl;
-    cout  <<"From 10 to 20 --- " << dig[2]  <<  endl;
-    cout  <<"From 20 to 30 --- "<< dig[3]  <<  endl;
-    cout  <<"From 30 to 40 --- " << dig[4]  <<  endl;
-    cout  <<"From 40 to 50 --- " << dig[5]  <<  endl;
-    cout  <<"From 50 to 60 --- " << dig[6]  <<  endl;
-    cout  <<"From 60 to 70 --- " << dig[7]  <<  endl;
-    cout  <<"From 70 to 80 --- " << dig[8]  <<  endl;
-    cout  <<"From 80 to 90 --- " << dig[9]  <<  endl;
-    cout  <<"From 90 to 100 --- " << dig[10]  <<  endl;
+    for (int i = 0; i < 10000; i++) { sort_(static_cast<double>(rand_()) / M * 100); }
+    cout  <<"From 0 to 10 --- " << static_cast<float>(dig[1])/10000  <<  endl;
+    cout  <<"From 10 to 20 --- " << static_cast<float>(dig[2]) / 10000 <<  endl;
+    cout  <<"From 20 to 30 --- "<< static_cast<float>(dig[3]) / 10000 <<  endl;
+    cout  <<"From 30 to 40 --- " << static_cast<float>(dig[4]) / 10000 <<  endl;
+    cout  <<"From 40 to 50 --- " << static_cast<float>(dig[5]) / 10000 <<  endl;
+    cout  <<"From 50 to 60 --- " << static_cast<float>(dig[6]) / 10000 <<  endl;
+    cout  <<"From 60 to 70 --- " << static_cast<float>(dig[7]) / 10000 <<  endl;
+    cout  <<"From 70 to 80 --- " << static_cast<float>(dig[8]) / 10000 <<  endl;
+    cout  <<"From 80 to 90 --- " << static_cast<float>(dig[9]) / 10000 <<  endl;
+    cout  <<"From 90 to 100 --- " << static_cast<float>(dig[10]) / 10000 <<  endl;
     return 0;
 }
 
