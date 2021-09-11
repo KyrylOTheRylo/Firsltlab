@@ -1,17 +1,15 @@
 
 #include <iostream>
 using namespace std;
-unsigned const short A = 4;
-unsigned const short C = 7;
-const unsigned long M = 21474836;
+
 int dig[10] = {0};
 
 
-int inc_dig(unsigned short i){
+void inc_dig(unsigned short i){
     dig[i]++;
-    return 0;
+
 }
-void sort_(double temp) {
+void sort_(float temp) {
     if (temp >= 0 && temp < 10) {
         inc_dig(0);
     } else if (temp >= 10 && temp < 20) {
@@ -36,26 +34,33 @@ void sort_(double temp) {
 }
 
 
-int rand_()
+long rand_first(long A, long C, long M )
 {
-    static int prev = 1;
-    prev = (A*prev+C) % M;
+    static long prev = 1;
+    prev = (A*prev+C) % M  ;
     return prev;
 }
 
 int main()
+
 {
-    for (int i = 0; i < 10000; i++) { sort_(static_cast<double>(rand_()) / M * 100); }
-    cout  <<"From 0 to 10 --- " << static_cast<float>(dig[0])/10000  <<  endl;
-    cout  <<"From 10 to 20 --- " << static_cast<float>(dig[1]) / 10000 <<  endl;
-    cout  <<"From 20 to 30 --- "<< static_cast<float>(dig[2]) / 10000 <<  endl;
-    cout  <<"From 30 to 40 --- " << static_cast<float>(dig[3]) / 10000 <<  endl;
-    cout  <<"From 40 to 50 --- " << static_cast<float>(dig[4]) / 10000 <<  endl;
-    cout  <<"From 50 to 60 --- " << static_cast<float>(dig[5]) / 10000 <<  endl;
-    cout  <<"From 60 to 70 --- " << static_cast<float>(dig[6]) / 10000 <<  endl;
-    cout  <<"From 70 to 80 --- " << static_cast<float>(dig[7]) / 10000 <<  endl;
-    cout  <<"From 80 to 90 --- " << static_cast<float>(dig[8]) / 10000 <<  endl;
-    cout  <<"From 90 to 100 --- " << static_cast<float>(dig[9]) / 10000 <<  endl;
+     long A, C, M;
+
+
+    cout << "Insert the coefficient A and C and M( M >1000 )" << endl;
+    cin >> A >>  C >> M ;
+
+    for (int i = 0; i < M-1; i++) { sort_(static_cast<float>(rand_first( A, C, M)) / static_cast<float>(M) * 100);}
+    cout  <<"From 0 to 10 --- " << static_cast<float>(dig[0])/ static_cast<float>(M-1)  <<  endl;
+    cout  <<"From 10 to 20 --- " << static_cast<float>(dig[1]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 20 to 30 --- "<< static_cast<float>(dig[2]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 30 to 40 --- " << static_cast<float>(dig[3]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 40 to 50 --- " << static_cast<float>(dig[4]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 50 to 60 --- " << static_cast<float>(dig[5]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 60 to 70 --- " << static_cast<float>(dig[6]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 70 to 80 --- " << static_cast<float>(dig[7]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 80 to 90 --- " << static_cast<float>(dig[8]) / static_cast<float>(M-1) <<  endl;
+    cout  <<"From 90 to 100 --- " << static_cast<float>(dig[9]) / static_cast<float>(M-1) <<  endl;
     return 0;
 }
 
