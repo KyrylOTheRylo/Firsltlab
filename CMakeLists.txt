@@ -3,5 +3,5 @@ project(Firsltlab)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Firsltlab  Firsttry.cpp)
+add_executable(Firsltlab  main.cpp)
 
