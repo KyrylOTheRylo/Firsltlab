@@ -67,7 +67,7 @@ void first(){
         cout << "Insert the coefficient A and C and M( M >1000 )" << endl;
         cin >> A >> C >> M ;
         }
-    else{A = 3, C = 5, M = 12000;}
+    else{A = 2, C = 666, M = 39916801;}
     for (int i = 0; i < M - 1; i++) { sort_(static_cast<float>(rand_first(A, C, M)) / static_cast<float>(M) * 100); }
     cout << "From 0 to 10 --- " << static_cast<float>(dig[0]) / static_cast<float>(M - 1) << endl;
     cout << "From 10 to 20 --- " << static_cast<float>(dig[1]) / static_cast<float>(M - 1) << endl;
@@ -90,9 +90,9 @@ void second(){
     cin >> check;
     if (check == 'y') {
         cout << "Insert the coefficient D, A and C and M( M >1000 )" << endl;
-        cin >>D>> A >> C >> M ;
+        cin >> D >> A >> C >> M ;
     }
-    else D=2, A=5, C=1231379, M=56321519;
+    else D=2, A=5, C=1231379, M=39916801;
 
     for (int i = 0; i < M-1; i++) {sort_(static_cast<float>(rand_second(D, A, C, M)) / static_cast<float>(M) * 100);}
     cout  <<"From 0 to 10 --- " << static_cast<float>(dig[0])/ static_cast<float>(M-1)  <<  endl;
@@ -115,7 +115,7 @@ void third(){
         cout << "Insert the coefficient A and C and M( M >1000 )" << endl;
         cin >> A >> C >> M ;
     }
-    else  A = 3, C = 5, M = 12000;;
+    else  A = 3, C = 5, M = 9973;;
     for (int i = 0; i < M - 1; i++) { sort_(static_cast<float>(rand_third(A, C, M)) / static_cast<float>(M) * 100); }
     cout << "From 0 to 10 --- " << static_cast<float>(dig[0]) / static_cast<float>(M - 1) << endl;
     cout << "From 10 to 20 --- " << static_cast<float>(dig[1]) / static_cast<float>(M - 1) << endl;
