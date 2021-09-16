@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include<string>
+#include <string>
 using namespace std;
 
 int dig[10] = {0};
@@ -36,39 +36,54 @@ void sort_(float temp) {
 
 
 unsigned long rand_first(int A, int C, int M )
-{   cin >> A >>  C >> M ;
+{   
     static unsigned long prev = 1;
-    prev = (A*prev+C) % M  ;
+    prev = (prev*A + C) % M  ;
+    cout << A << prev*A <<" " << C << endl;
     return prev;
 }
 unsigned long long  rand_second(int D, int A, int C, int M )
-{   cin >> D >> A >>  C >> M ;
+{
     static unsigned long long prev = 1;
+
     prev = (D*prev*prev+A*prev+C) % M  ;
     return prev;
 }
+unsigned long rand_third(int A, int C, int M)
+{
+    
+    static unsigned long prev = A;
+    prev = (prev + C) % M;
+    return prev;
+}
 void first(){
-    int A = 1, C = 2, M = 1000;
-    cout << "Insert the coefficient A and C and M( M >1000 ) if you want to get answer just put something except numbers"  << endl;
+    int  A = 3, C = 5, M = 12000;
+    char check;
+    
+    cout << "Insert the coefficient A and C and M( M >1000 ) if you want to get answer just put something except numbers" << endl;
+    cin >> check;
+    if (check == 'y')  cout << "sdf" ;
+    cin >> A >> C >> M;
+    for (int i = 0; i < M - 1; i++) { sort_(static_cast<float>(rand_first(A, C, M)) / static_cast<float>(M) * 100); }
+    cout << "From 0 to 10 --- " << static_cast<float>(dig[0]) / static_cast<float>(M - 1) << endl;
+    cout << "From 10 to 20 --- " << static_cast<float>(dig[1]) / static_cast<float>(M - 1) << endl;
+    cout << "From 20 to 30 --- " << static_cast<float>(dig[2]) / static_cast<float>(M - 1) << endl;
+    cout << "From 30 to 40 --- " << static_cast<float>(dig[3]) / static_cast<float>(M - 1) << endl;
+    cout << "From 40 to 50 --- " << static_cast<float>(dig[4]) / static_cast<float>(M - 1) << endl;
+    cout << "From 50 to 60 --- " << static_cast<float>(dig[5]) / static_cast<float>(M - 1) << endl;
+    cout << "From 60 to 70 --- " << static_cast<float>(dig[6]) / static_cast<float>(M - 1) << endl;
+    cout << "From 70 to 80 --- " << static_cast<float>(dig[7]) / static_cast<float>(M - 1) << endl;
+    cout << "From 80 to 90 --- " << static_cast<float>(dig[8]) / static_cast<float>(M - 1) << endl;
+    cout << "From 90 to 100 --- " << static_cast<float>(dig[9]) / static_cast<float>(M - 1) << endl;
 
-    for (int i = 0; i < M-1; i++) {sort_(static_cast<float>(rand_first( A, C, M)) / static_cast<float>(M) * 100);}
-    cout  <<"From 0 to 10 --- " << static_cast<float>(dig[0])/ static_cast<float>(M-1)  <<  endl;
-    cout  <<"From 10 to 20 --- " << static_cast<float>(dig[1]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 20 to 30 --- "<< static_cast<float>(dig[2]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 30 to 40 --- " << static_cast<float>(dig[3]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 40 to 50 --- " << static_cast<float>(dig[4]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 50 to 60 --- " << static_cast<float>(dig[5]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 60 to 70 --- " << static_cast<float>(dig[6]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 70 to 80 --- " << static_cast<float>(dig[7]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 80 to 90 --- " << static_cast<float>(dig[8]) / static_cast<float>(M-1) <<  endl;
-    cout  <<"From 90 to 100 --- " << static_cast<float>(dig[9]) / static_cast<float>(M-1) <<  endl;
+
 }
 void second(){
     int D=2, A=5, C=1231379, M=56321519;
 
 
     cout << "Insert the coefficient D, A and C and M( M >1000 ) if you want to get answer just put something except numbers" << endl;
-
+    cin >> D >> A >> C >> M;
 
     for (int i = 0; i < M-1; i++) {sort_(static_cast<float>(rand_second(D, A, C, M)) / static_cast<float>(M) * 100);}
     cout  <<"From 0 to 10 --- " << static_cast<float>(dig[0])/ static_cast<float>(M-1)  <<  endl;
@@ -82,7 +97,25 @@ void second(){
     cout  <<"From 80 to 90 --- " << static_cast<float>(dig[8]) / static_cast<float>(M-1) <<  endl;
     cout  <<"From 90 to 100 --- " << static_cast<float>(dig[9]) / static_cast<float>(M-1) <<  endl;
 }
+void third(){
+    int  A = 3, C = 5, M = 12000;
 
+    cout << "Insert the coefficient A and C and M( M >1000 ) if you want to get answer just put something except numbers" << endl;
+    cin >> A >> C >> M;
+    for (int i = 0; i < M - 1; i++) { sort_(static_cast<float>(rand_third(A, C, M)) / static_cast<float>(M) * 100); }
+    cout << "From 0 to 10 --- " << static_cast<float>(dig[0]) / static_cast<float>(M - 1) << endl;
+    cout << "From 10 to 20 --- " << static_cast<float>(dig[1]) / static_cast<float>(M - 1) << endl;
+    cout << "From 20 to 30 --- " << static_cast<float>(dig[2]) / static_cast<float>(M - 1) << endl;
+    cout << "From 30 to 40 --- " << static_cast<float>(dig[3]) / static_cast<float>(M - 1) << endl;
+    cout << "From 40 to 50 --- " << static_cast<float>(dig[4]) / static_cast<float>(M - 1) << endl;
+    cout << "From 50 to 60 --- " << static_cast<float>(dig[5]) / static_cast<float>(M - 1) << endl;
+    cout << "From 60 to 70 --- " << static_cast<float>(dig[6]) / static_cast<float>(M - 1) << endl;
+    cout << "From 70 to 80 --- " << static_cast<float>(dig[7]) / static_cast<float>(M - 1) << endl;
+    cout << "From 80 to 90 --- " << static_cast<float>(dig[8]) / static_cast<float>(M - 1) << endl;
+    cout << "From 90 to 100 --- " << static_cast<float>(dig[9]) / static_cast<float>(M - 1) << endl;
+
+
+}
 
 
 void print_menu();
@@ -101,7 +134,7 @@ int main() {
             second();
             break;
         case 3:
-            //code
+            third();
             break;
         case 4:
             //code
