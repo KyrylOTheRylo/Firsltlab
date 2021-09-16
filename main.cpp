@@ -1,6 +1,6 @@
 
 #include <iostream>
-
+#include<string>
 using namespace std;
 
 int dig[10] = {0};
@@ -35,7 +35,7 @@ void sort_(float temp) {
 }
 
 
-unsigned long rand_first(int A=1, int C=2, int M=1000 )
+unsigned long rand_first(int A, int C, int M )
 {   cin >> A >>  C >> M ;
     static unsigned long prev = 1;
     prev = (A*prev+C) % M  ;
@@ -48,8 +48,8 @@ unsigned long long  rand_second(int D, int A, int C, int M )
     return prev;
 }
 void first(){
-    int  A, C, M;
-    cout << "Insert the coefficient A and C and M( M >1000 ) if you want to get answer just put something except numbers" << endl;
+    int A = 1, C = 2, M = 1000;
+    cout << "Insert the coefficient A and C and M( M >1000 ) if you want to get answer just put something except numbers"  << endl;
 
     for (int i = 0; i < M-1; i++) {sort_(static_cast<float>(rand_first( A, C, M)) / static_cast<float>(M) * 100);}
     cout  <<"From 0 to 10 --- " << static_cast<float>(dig[0])/ static_cast<float>(M-1)  <<  endl;
